@@ -7,8 +7,12 @@ public class Cylinder implements Shape {
     private double height;
 
     public Cylinder(double radius, double height) {
-        this.radius = radius;
-        this.height = height;
+        if (radius <= 0 || height <= 0) {
+            throw new ArithmeticException("The numbers must be positive");
+        } else {
+            this.radius = radius;
+            this.height = height;
+        }
     }
 
     //no setter `cause the cylinder is supposed to be created with these parameters and not to change them afterwards
