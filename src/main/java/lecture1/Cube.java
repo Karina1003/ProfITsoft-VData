@@ -6,7 +6,9 @@ public class Cube implements Shape {
     private double side;
 
     public Cube(double side) {
-        this.side = side;
+        if (side <= 0) {
+            throw new ArithmeticException("The number must be positive");
+        } else this.side = side;
     }
 
     //no setter `cause the cube is supposed to be created with the side and not to change it afterwards
