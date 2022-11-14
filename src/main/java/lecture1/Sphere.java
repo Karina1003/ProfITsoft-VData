@@ -6,7 +6,9 @@ public class Sphere implements Shape {
     private double radius;
 
     public Sphere(double radius) {
-        this.radius = radius;
+        if (radius <= 0) {
+            throw new ArithmeticException("The number must be positive");
+        } else this.radius = radius;
     }
 
     //no setter `cause the sphere is supposed to be created with the radius and not to change it afterwards
